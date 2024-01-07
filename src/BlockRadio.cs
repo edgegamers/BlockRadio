@@ -5,15 +5,15 @@ using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Core.Attributes;
 
-[MinimumApiVersion(5)]
+[MinimumApiVersion(142)]
 public class BlockRCommands : BasePlugin
 {
     public override string ModuleName => "Block Radio Commands";
-    public override string ModuleVersion => "0.2";
+    public override string ModuleVersion => "0.2.1";
     public override string ModuleAuthor => "Cruze";
     public override string ModuleDescription => "Blocks radio commands, player ping and chatwheel";
 
-    private string[] Commands = new string[] { "coverme", "takepoint", "holdpos", "regroup", "followme", "takingfire", "go", "fallback", "sticktog","getinpos", "stormfront", "report", "roger", "enemyspot", "needbackup", "sectorclear", "inposition", "reportingin","getout", "negative", "enemydown", "compliment", "thanks", "cheer", "go_a", "go_b", "sorry", "needrop", "playerradio", "playerchatwheel", "player_ping", "chatwheel_ping"};
+    private string[] Commands = new string[] { "coverme", "takepoint", "holdpos", "regroup", "followme", "takingfire", "go", "fallback", "sticktog", "getinpos", "stormfront", "report", "roger", "enemyspot", "needbackup", "sectorclear", "inposition", "reportingin", "getout", "negative", "enemydown", "compliment", "thanks", "cheer", "go_a", "go_b", "sorry", "needrop", "playerradio", "playerchatwheel", "chatwheel_ping" };
 
 
     public override void Load(bool hotReload)
@@ -21,10 +21,8 @@ public class BlockRCommands : BasePlugin
         for (int i = 0; i < Commands.Length; i++)
         {
             AddCommandListener(Commands[i], CommandListener_RadioCommands);
-            // Console.WriteLine($"Adding listener to {Commands[i]}");
         }
-        
-        
+
         Console.WriteLine("BlockRadioCommands is loaded");
     }
 
